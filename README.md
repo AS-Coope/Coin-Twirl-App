@@ -14,6 +14,6 @@ To use this project:
 * Open the project.
 
 ## Functional Requirements/ Deliverables
-For 1.0v:
+For v1.0:
 - [X] The app shall randomly show heads or tails.
 - [X] The app shall display the result to the user via relevant icons.
