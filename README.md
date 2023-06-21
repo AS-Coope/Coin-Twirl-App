@@ -15,4 +15,4 @@ To use this project:
 
 ## Functional Requirements/ Deliverables
 - [X] The app shall randomly show heads or tails.
-- [ ] The app shall display the result to the user via relevant icons.
+- [X] The app shall display the result to the user via relevant icons.
