@@ -16,4 +16,8 @@ To use this project:
 ## Functional Requirements/ Deliverables
 For v1.0:
 - [X] The app shall randomly show heads or tails.
-- [X] The app shall display the result to the user via relevant icons.
+- [X] The app shall display the result to the user via relevant icons. 
+
+For v1.1:
+- [X] The app shall show the 'HEADS' icon as the app icon (Non-functional).
+- [X] The app shall carry a consistent UI theme for Dark and Light Mode (Non-functional).
