@@ -29,14 +29,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun flipCoin(){
-        val coin = Coin()
+        //val coin = Coin()
         val coinResult: TextView = findViewById(R.id.resultTv)
         val imageResult: ImageView = findViewById(R.id.iconIv)
 
         // storing result of coin flip
-        val coinFlipResult = coin.flip()
+        //val coinFlipResult = coin.flip()
         // shows relevant icon when heads or tails is shown on coin
-        when(coinFlipResult){
+        when(viewModel.flip()){
             "Heads" -> {
                 imageResult.setImageResource(R.drawable.coin_heads)
             } "Tails" -> {
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         // display result message on screen
-        coinResult.text = "You got ${coinFlipResult}!"
+        coinResult.text = "You got ${viewModel.coinFlipTextResult.value}!"
         imageResult.contentDescription = coinResult.text
     }
 
