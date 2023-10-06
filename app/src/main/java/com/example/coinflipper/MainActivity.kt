@@ -13,14 +13,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.coinFlipperViewModel = viewModel
-
+        binding.lifecycleOwner = this
+        //viewModel.initializeAppData()
         // show image on first start of app
         binding.iconIv.setImageResource(R.drawable.coin_heads)
-
         binding.flipBtn.setOnClickListener {
             flipCoin()
         }
@@ -37,10 +36,14 @@ class MainActivity : AppCompatActivity() {
         // storing result of coin flip
         //val coinFlipResult = coin.flip()
         // shows relevant icon when heads or tails is shown on coin
+
         when(viewModel.flip()){
+
             "Heads" -> {
+                //Log.d("MainActivity", "${viewModel.coinFlipTextResult.value}")
                 binding.iconIv.setImageResource(R.drawable.coin_heads)
             } "Tails" -> {
+                //Log.d("MainActivity", "${viewModel.coinFlipTextResult.value}")
                 binding.iconIv.setImageResource(R.drawable.coin_tails)
             }
         }
