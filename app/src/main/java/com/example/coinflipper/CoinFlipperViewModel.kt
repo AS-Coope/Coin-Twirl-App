@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class CoinFlipperViewModel: ViewModel() {
 
     private var _coinFlipTextResult = MutableLiveData<String>()
-    private val coinFlipTextResult: LiveData<String>
+    val coinFlipTextResult: LiveData<String>
             get() = _coinFlipTextResult
 
     fun flip(): String{
