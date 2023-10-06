@@ -1,9 +1,6 @@
 package com.example.coinflipper
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -17,35 +14,39 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val flipButton: Button = findViewById(R.id.flipBtn)
-        flipButton.setOnClickListener {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.coinFlipperViewModel = viewModel
+
+        // show image on first start of app
+        binding.iconIv.setImageResource(R.drawable.coin_heads)
+
+        binding.flipBtn.setOnClickListener {
             flipCoin()
         }
-        // show image on first start of app
-        val startImage: ImageView = findViewById(R.id.iconIv)
-        startImage.setImageResource(R.drawable.coin_heads)
     }
 
     private fun flipCoin(){
+        /*
         //val coin = Coin()
         val coinResult: TextView = findViewById(R.id.resultTv)
         val imageResult: ImageView = findViewById(R.id.iconIv)
 
+
+         */
         // storing result of coin flip
         //val coinFlipResult = coin.flip()
         // shows relevant icon when heads or tails is shown on coin
         when(viewModel.flip()){
             "Heads" -> {
-                imageResult.setImageResource(R.drawable.coin_heads)
+                binding.iconIv.setImageResource(R.drawable.coin_heads)
             } "Tails" -> {
-                imageResult.setImageResource(R.drawable.coin_tails)
+                binding.iconIv.setImageResource(R.drawable.coin_tails)
             }
         }
         // display result message on screen
-        coinResult.text = "You got ${viewModel.coinFlipTextResult.value}!"
-        imageResult.contentDescription = coinResult.text
+        //binding.resultTv.text = "You got ${viewModel.coinFlipTextResult.value}!"
+        //binding.iconIv.contentDescription = binding.resultTv.text
     }
 
     /*
