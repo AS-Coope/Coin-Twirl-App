@@ -40,6 +40,25 @@ class MainActivity : AppCompatActivity() {
         coinResult.text = "You got ${coinFlipResult}!"
         imageResult.contentDescription = coinResult.text
     }
+
+    /*
+    Have a function that will take the result of the coin flip calculated
+    by the view model, then use that to determine how which image resource
+    to show on screen
+
+    There will not need to be a reference to the text view for the coin result.
+    Data binding will allow the layout file and the view model to communicate
+    where that is concerned
+
+    Move coin flip class to the view model as well
+    Actually, I don't think a coin class will even be needed
+    Just have the flip function alone and store the result in a variable
+    which will make use of the backing property to send it back to the
+    UI Controller (Main Activity)
+
+    Ensure the result of the coin flip is stored in a variable. That is what
+    data binding will use in the layout file
+     */
 }
 
 class Coin {
