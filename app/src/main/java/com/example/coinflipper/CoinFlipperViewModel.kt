@@ -1,14 +1,13 @@
 package com.example.coinflipper
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class CoinFlipperViewModel: ViewModel() {
 
+    // mutable live data with their backing properties
     private var _coinFlipTextResult = MutableLiveData<String>("Heads")
-    //private var checkIfFirstFlip: Int = 0
     val coinFlipTextResult: LiveData<String>
         get() = _coinFlipTextResult
 
@@ -16,10 +15,8 @@ class CoinFlipperViewModel: ViewModel() {
     val coinFlipImage: LiveData<Int>
         get() = _coinFlipImage
 
-    init{
-    }
-    fun flip(): String{
-        Log.d("CoinFlipperViewModel", "Mutable: ${_coinFlipTextResult.value}, Immutable: ${coinFlipTextResult.value}")
+    // handles what text result and coin image will be shown on screen
+    fun flip() {
 
         if ((1..2).random() == 1) {
             _coinFlipTextResult.value = "Heads"
@@ -28,10 +25,5 @@ class CoinFlipperViewModel: ViewModel() {
             _coinFlipTextResult.value = "Tails"
             _coinFlipImage.value = R.drawable.coin_tails
         }
-        return coinFlipTextResult.value!!
-    }
-
-    fun initializeAppData(){
-        _coinFlipTextResult.value = "Heads"
     }
 }
