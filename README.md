@@ -21,4 +21,4 @@ For v1.0:
 For v1.1:
 - [X] The app shall show the 'HEADS' icon as the app icon (Non-functional).
 - [X] The app shall carry a consistent UI theme for Dark and Light Mode (Non-functional).
-- [ ] The app shall show the result of a coin twirl even after a configuration change. (Non-functional)
+- [X] The app shall show the result of a coin twirl even after a configuration change. (Non-functional)
