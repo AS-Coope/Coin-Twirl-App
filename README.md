@@ -1,4 +1,12 @@
 # Coin-Twirl-App
+
+## Screenshots
+<div style="display:flex; gap:10px;">
+    <img src="img/CoinFlipper_Image_Coin_Heads.jpg" height=480px width=auto alt="CoinTwirl_Screenshot_Coin_Heads">
+    <img src="img/CoinFlipper_Image_Coin_Tails.jpg" height=480px width=auto alt="CoinTwirl_Screenshot_Coin_Tails" style="display:inline;">
+</div>
+
+
 ## Overview
 This is an Android application where the user can flip a coin and randomly get heads or tails. 
 As such, it has a variety of use cases, including starting a football match or during a games night.  
