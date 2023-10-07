@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         //viewModel.initializeAppData()
         // show image on first start of app
-        binding.iconIv.setImageResource(R.drawable.coin_heads)
+        binding.iconIv.setImageResource(viewModel.coinFlipImage.value!!)
         binding.flipBtn.setOnClickListener {
             flipCoin()
         }
@@ -41,12 +41,15 @@ class MainActivity : AppCompatActivity() {
 
             "Heads" -> {
                 //Log.d("MainActivity", "${viewModel.coinFlipTextResult.value}")
-                binding.iconIv.setImageResource(R.drawable.coin_heads)
+                binding.iconIv.setImageResource(viewModel.coinFlipImage.value!!)
             } "Tails" -> {
                 //Log.d("MainActivity", "${viewModel.coinFlipTextResult.value}")
-                binding.iconIv.setImageResource(R.drawable.coin_tails)
+                binding.iconIv.setImageResource(viewModel.coinFlipImage.value!!)
             }
+
         }
+
+
         // display result message on screen
         //binding.resultTv.text = "You got ${viewModel.coinFlipTextResult.value}!"
         //binding.iconIv.contentDescription = binding.resultTv.text
